@@ -1,0 +1,37 @@
+<ion-header [translucent]="true">
+  <ion-toolbar style="--background: rgb(250, 0, 0); color: white">
+    <ion-buttons slot="primary">
+      <ion-button [routerLink]="['/user-config']">
+        <ion-icon name="person-circle" style="font-size: 30px;"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title style="font-size: 25px;">
+      Focus
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="false">
+
+  <ion-segment (ionChange)="segmentChanged($event)" style="--background: #FF8E81" color="light">
+    <ion-segment-button value="Fahrenheit">
+      <ion-label>Fahrenheit</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="Celsius">
+      <ion-label>Celsius</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  <div style="width: 100%; padding-top: 30px;" align="center">
+    <linear-gauge width="150" height="400" title="{{name}}" min-value="0" max-value="100"
+      major-ticks="[0,10,20,30,40,50,60,70,80,90,100]" minor-ticks="5" stroke-ticks="true" ticks-width="15"
+      ticks-width-minor="7.5" highlights='{"from": 0, "to": 100, "color": "rgba(255, 0, 0, .3)"} ]'
+      color-major-ticks="#ffffff" color-minor-ticks="#ffffff" color-title="#ffffff" color-units="#ccc"
+      color-numbers="#eee" color-plate="rgb(250, 145, 46)" color-plate-end="rgb(249, 141, 20)" border-shadow-width="0"
+      borders="false" border-radius="10" needle-type="arrow" needle-width="3" animation-duration="250"
+      animation-rule="linear" animated-value="true" color-needle="#222" color-needle-end=""
+      color-bar-progress="rgb(250, 0, 0)" color-bar="#f5f5f5" bar-stroke="0" bar-width="8" bar-begin-circle="false"
+      value="{{data}}"></linear-gauge>
+    <!-- <ion-input type="number" [(ngModel)]="data"></ion-input> -->
+  </div>
+</ion-content>

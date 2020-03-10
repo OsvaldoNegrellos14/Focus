@@ -1,0 +1,23 @@
+<ion-header [translucent]="true">
+  <ion-toolbar style="--background: rgb(250, 0, 0); color: white">
+    <ion-buttons slot="primary">
+      <ion-button [routerLink]="['/user-config']">
+        <ion-icon name="person-circle" style="font-size: 30px;"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title style="font-size: 25px;">
+      Focus
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div style="width: 100%;" class="chart3" align="center">
+    <mwl-gauge [min]="0" [max]="100" [dialStartAngle]="-90" [dialEndAngle]="-90.001" [dialRadius]="35" [value]="data" [animated]="true"
+      [animationDuration]="1">
+    </mwl-gauge>
+    <h3 style="margin: 0px;">Humedad: {{data}}%</h3>
+    <canvas #chart></canvas>
+  </div>
+  
+</ion-content>

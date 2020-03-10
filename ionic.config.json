@@ -1,0 +1,7 @@
+{
+  "name": "Focus",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

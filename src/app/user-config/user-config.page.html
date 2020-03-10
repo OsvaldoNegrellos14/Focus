@@ -1,0 +1,57 @@
+<ion-header [translucent]="true">
+  <ion-toolbar style="--background: rgb(250, 0, 0); color: white">
+    <ion-buttons slot="start">
+      <ion-back-button text="" icon="arrow-back-outline"></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button [routerLink]="['/notifications']">
+        <ion-icon name="notifications" style="font-size: 30px;"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title style="font-size: 25px;">
+      Usuario
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div align="center">
+    <div *ngIf="res.picture != null; else elseBlock">
+      <img src="{{res.picture}}" alt="" style="width: 135px; height: 135px; border-radius: 50%; margin-top: 20px;">
+    </div>
+    <ng-template #elseBlock>
+      <img src="./../../assets/user.svg" class="icono">
+    </ng-template>
+    <!-- <p>{{res.userId}}</p>
+    <p>{{res.email}}</p>
+    <p>{{res.first_name}}</p>
+    <p>{{res.username}}</p> -->
+  </div>
+  <div style="margin: 10px 15px 10px 15px;">
+    <ion-item>
+      <ion-label style="--color: #7A7A7A" position="stacked">Nombre de usuario</ion-label>
+      <ion-input type="text" readonly="true">{{res.username}}</ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label style="--color: #7A7A7A" position="stacked">Identificador</ion-label>
+      <ion-input type="text" readonly="true">{{res.userId}}</ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label style="--color: #7A7A7A" position="stacked">Email</ion-label>
+      <ion-input type="text" readonly="true">{{res.email}}</ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label style="--color: #7A7A7A" position="stacked">Nombre</ion-label>
+      <ion-input type="text" readonly="true">{{res.first_name}}</ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label [routerLink]="['/select-device']"><b>Cambiar dispositivo</b></ion-label>
+    </ion-item>
+  </div>
+
+  <div align="center" style="margin-top: 20%;">
+    <ion-button (click)="logout()" class="buton" size="large" color="tertiary"
+      style="color: white; --border-radius: 30px;">Cerrar sesión</ion-button>
+  </div>
+
+</ion-content>

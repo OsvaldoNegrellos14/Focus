@@ -1,0 +1,62 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>slide-show</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content>
+  <ion-slides pager="true" style="color: red;">
+
+    <ion-slide style="padding-top: 15%;">
+      <div class="slide">
+        <ion-row class="ion-align-items-center">
+          <ion-col size="1">
+            
+          </ion-col>
+          <ion-col>
+            <img src="./../../assets/home.svg" alt="">
+            <h3>Bienvenido a Focus</h3>
+            <p>Tu aplicación de monitoreo!</p>
+            <ion-button [routerLink]="['/select-device']" class="buton" style="color: white;">Saltar</ion-button>
+          </ion-col>
+          <ion-col size="1">
+            <ion-icon class="arrow" name="chevron-forward-outline"></ion-icon>
+          </ion-col>
+        </ion-row>
+      </div>
+    </ion-slide>
+
+    <ion-slide style="padding-top: 15%;">
+      <ion-row class="ion-align-items-center">
+        <ion-col size="1">
+          <ion-icon class="arrow" name="chevron-back-outline"></ion-icon>
+        </ion-col>
+        <ion-col>
+          <img src="./../../assets/smartphone.svg" alt="">
+          <h3>Verifica</h3>
+          <p>Recibe mensajes si sucede algo extraño</p>
+        </ion-col>
+        <ion-col size="1">
+          <ion-icon class="arrow" name="chevron-forward-outline"></ion-icon>
+        </ion-col>
+      </ion-row>
+    </ion-slide>
+
+    <ion-slide style="padding-top: 15%;">
+      <ion-row class="ion-align-items-center">
+        <ion-col size="1">
+          <ion-icon class="arrow" name="chevron-back-outline"></ion-icon>
+        </ion-col>
+        <ion-col>
+          <img src="./../../assets/iphone.svg" alt="">
+          <h3>Visualiza</h3>
+          <p>Observa la información y estadística del día así como sus diferentes apartados</p>
+          <ion-button [routerLink]="['/select-device']" class="buton" style="color: white;">Iniciar</ion-button>
+        </ion-col>
+        <ion-col size="1">
+
+        </ion-col>
+      </ion-row>
+    </ion-slide>
+  </ion-slides>
+</ion-content>

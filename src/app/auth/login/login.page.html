@@ -1,0 +1,68 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>login</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content>
+
+  <div align="center" style="padding-top: 10%;">
+    <img src="./../../../assets/icon/icon.png" alt="icon" class="icono">
+
+    <h1 style="font-size: 35px; color: red; padding-bottom: 15px;">FOCUS</h1>
+
+    <div style="margin: 10px 20px 10px 20px;">
+      <ion-item required="true">
+        <ion-label position="floating" style="--color: red">Correo electronico</ion-label>
+        <ion-input style="--color: red" id="email" name="email" [(ngModel)]="data.email" #email="ngModel"></ion-input>
+        <ion-icon name="person" slot="start" style="color: red"></ion-icon>
+      </ion-item>
+      <br>
+      <ion-item required="true">
+        <ion-label position="floating" style="--color: red">Contraseña</ion-label>
+        <ion-input type="password" style="--color: red" id="password" name="password" [(ngModel)]="data.password" #password="ngModel"></ion-input>
+        <ion-icon name="key" slot="start" style="color: red"></ion-icon>
+      </ion-item>
+    </div>
+    <br>
+  </div>
+  <div style="padding: 0px 25px 0px 23px;">
+    <!-- <ion-row>
+      <ion-checkbox color="dark"></ion-checkbox>
+      <p style="margin: 0px; padding-left: 5px;">Recordarme</p>
+    </ion-row> -->
+    <br>
+    <div align="center">
+      <ion-button (click)="loginFirebase(email.value, password.value)" class="buton" size="large" color="danger" style="color: white;">
+        Iniciar Sesión</ion-button>
+    </div>
+    <br>
+    <ion-row align="center">
+      <ion-col>
+        <img (click)="loginWithFacebook()" class="iconLogin" src="./../../../assets/facebook.svg">
+      </ion-col>
+      <ion-col>
+        <img (click)="loginWithGoogle()" class="iconLogin" src="./../../../assets/gmail.svg">
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="5">
+        <hr color="red">
+      </ion-col>
+      <ion-col align="center"><b>O</b></ion-col>
+      <ion-col size="5">
+        <hr color="red">
+      </ion-col>
+    </ion-row>
+
+    <div align="center">
+      <ion-button [routerLink]="['/sign-up']" class="buton" color="danger" style="color: white;">Registrarse
+      </ion-button>
+    </div>
+    
+
+  </div>
+
+
+
+</ion-content>

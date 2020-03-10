@@ -1,0 +1,32 @@
+<ion-header [translucent]="true">
+  <ion-toolbar style="--background: rgb(250, 0, 0); color: white">
+    <ion-title style="font-size: 25px;">
+      Seleciona tu dispositivo
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div style="margin-left: 10px; margin-right: 10px;">
+    <h3>Dispositivos agregados</h3>
+  </div>
+
+  <ion-card>
+    <div *ngFor="let device of userDevices">
+      <ion-item class="ion-activated" [routerLink]="['/']">
+        <ion-card-header>
+          <ion-card-subtitle>{{device.deviceId}}</ion-card-subtitle>
+          <ion-card-title>{{device.name}}</ion-card-title>
+          <ion-label>{{device.phone}}</ion-label>
+        </ion-card-header>
+        <ion-icon name="wifi" slot="start"></ion-icon>
+      </ion-item>
+    </div>
+  </ion-card>
+
+  <ion-fab horizontal="center" vertical="bottom" slot="fixed">
+    <ion-fab-button color="danger" [routerLink]="['/register-device']">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
